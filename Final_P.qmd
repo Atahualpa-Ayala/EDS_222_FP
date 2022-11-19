@@ -1,0 +1,71 @@
+---
+title: "Chaco Deforestation"
+author: "Atahualpa Ayala"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Map Biomas <https://quarto.org>.
+
+INFONA
+
+
+
+```{r}
+library(stars)
+library(tmap)
+library(tidyverse)
+library(raster)
+library (rgdal)
+
+```
+
+preguntas 
+1- hay alguna diverencia entre deforestación entre los 10 anos, en relación al covid (puede ser tambien tiempo de los goviernos).
+2- hay alguna relación entre la deforestación ilegal y legal...con el covid...alguna aumento mas o menos?
+3- cual fue el ecosistema mas afectado, en superficie y en proporción.
+4- Proximidad a Colonias Menonitas? proximidad a Tierras Indigenas?
+
+You can add options to executable code like this
+
+```{r}
+#meter here aca
+mb_clases <- read.csv("D:/UCSB/MDS_222/final_project/data/mapbiomas-chaco-collection-30-paraguay-area.csv")
+stars_20_21 <- read_stars("D:/UCSB/MDS_222/final_project/data/mapbiomas-chaco-collection-30-paraguay-2020_2021.tif")
+raster_20_21 <- raster("D:/UCSB/MDS_222/final_project/data/mapbiomas-chaco-collection-30-paraguay-2020_2021.tif")
+```
+
+
+```{r}
+
+
+
+```
+```{r}
+
+
+
+
+
+```
+
+
+
+
+
+```{r}
+
+deforestation= c(658,657,645,644,643,636,622,615,604,358,357,345,344,343,342,336,322,315,304)
+
+
+fl_20_21 = stars_20_21
+fl_20_21[stars_20_21 != deforestation]= NA
+fl_20_21[stars_20_21 == deforestation]= 1
+
+
+```
+
+
+The `echo: false` option disables the printing of code (only output is displayed).
